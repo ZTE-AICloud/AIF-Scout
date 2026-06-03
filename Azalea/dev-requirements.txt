@@ -1,0 +1,11 @@
+-r requirements.txt
+ruff==0.4.1
+stestr==4.1.0
+cliff==4.6.0
+autopage==0.5.2
+cmd2==2.4.3
+pyperclip==1.9.0
+pbr==6.0.0
+stevedore==5.2.0
+wcwidth==0.2.13
+prettytable==3.10.0

@@ -1,0 +1,61 @@
+[
+  {
+    "key": "basic_hardware_check",
+    "name_en": "Basic Hardware Check",
+    "name_zh": "基础硬件检查",
+    "check_item": [
+      "cpu_check",
+      "memory_check",
+      "hard_disk_check",
+      "raid_card_check"
+    ]
+  },
+  {
+    "key": "gpu_check",
+    "name_en": "GPU Check",
+    "name_zh": "GPU检查",
+    "check_item": [
+      "gpu_info_check",
+      "gpu_driver_check",
+      "gpu_state_check",
+      "gpu_bf16_check",
+      "gpu_fp32_check",
+      "gpu_int8_check",
+      "gpu_tf32_check",
+      "gpu_d2d_check",
+      "gpu_d2h_check",
+      "gpu_h2d_check",
+      "gpu_membw_check",
+      "gpu_topology_consistency_check"
+    ]
+  },
+  {
+    "key": "nic_check",
+    "name_en": "NIC Check",
+    "name_zh": "网卡检查",
+    "check_item": [
+      "nic_state_check",
+      "nic_driver_check",
+      "optical_module_health_check"
+    ]
+  },
+  {
+    "key": "os_config_check",
+    "name_en": "OS Config Check",
+    "name_zh": "OS配置检查",
+    "check_item": [
+      "cpu_idle_state_check",
+      "pcie_acs_check",
+      "roce_network_config_check"
+    ]
+  },
+  {
+    "key": "pcie_link_state_check",
+    "name_en": "PCIe Link State Check",
+    "name_zh": "PCIe卡连接状态检查",
+    "check_item": [
+      "nic_pcie_link_state_check",
+      "gpu_pcie_link_state_check"
+    ]
+  }
+]

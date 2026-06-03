@@ -1,0 +1,52 @@
+{
+  "toggleBtn": {
+    "text": "folding",
+    "collapsedText": "expand"
+  },
+  "menusData": [
+    {
+      "name": "Environment Check",
+      "iconClass": "plx-ico-diagnostic-tools-16",
+      "nameEn": "EnvCheck.EnvironmentCheck",
+      "children": [
+        {
+          "nameEn": "EnvCheck.BasicCheck",
+          "href": "/check/env-check/basic"
+        },
+        {
+          "nameEn": "EnvCheck.NetCheck",
+          "href": "/check/env-check/network"
+        }
+      ]
+    },
+    {
+      "iconClass": "plx-ico-four-grid-16",
+      "nameEn": "ModelTesting.ModelTesting",
+      "children": [
+        {
+          "nameEn": "ModelTesting.ModelTesting",
+          "href": "/check/model-testing/task"
+        }
+      ]
+    },
+    {
+      "name": "Configuration",
+      "iconClass": "plx-ico-fm-setting-16",
+      "nameEn": "SystemManage.Configuration",
+      "children": [
+        {
+          "nameEn": "NodeManage.NodeManage",
+          "href": "/check/config/node"
+        },
+        {
+          "nameEn": "FileManage.FileManage",
+          "href": "/check/config/file"
+        },
+        {
+          "nameEn": "SystemManage.LoginSetting",
+          "href": "/check/config/login-setting"
+        }
+      ]
+    }
+  ]
+}

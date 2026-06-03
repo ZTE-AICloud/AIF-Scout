@@ -1,0 +1,40 @@
+inference_llama2-70b:
+  NVIDIA:
+    H20:
+      pre_cmd:
+        - rm -rf {remote_data_path}; mkdir -p {remote_data_path} && echo "task start" > {remote_data_path}/{task_name}_{node_id}_inference_benchmark_llama2-70b_performance.log
+        - sudo docker ps -a |grep -w {docker_name} && sudo docker stop {docker_name}; sudo docker rm -f {docker_name} || true
+      task_cmd:
+        - cd {remote_data_path} && git clone https://github.com/NVIDIA/TensorRT-LLM.git && cd TensorRT-LLM && git fetch --tags && git checkout tags/v0.10.0 -b azalea
+        - sudo docker pull {image_id}
+        - sudo docker run -itd --gpus all --privileged=true --net=host --name {docker_name} --shm-size=6g -v {remote_data_path}:/workspace -w /workspace {image_id} bash
+        - sudo docker exec -d {docker_name} bash -lc
+          "bash /workspace/{entry_script}
+          /workspace/{task_name}_{node_id}_inference_benchmark_llama2-70b_performance.log
+          {task_name}
+          {max_batch_size}
+          {max_input_len}
+          {max_output_len}
+          {tp_size}"
+      post_cmd:
+        - sudo docker ps -a |grep -w {docker_name} && sudo docker stop {docker_name}; sudo docker rm -f {docker_name} || true
+        - sudo docker rmi {image_id} || true
+        - cd {remote_data_path} && ls |grep -v "\.log$" |xargs rm -rf || true
+      scp_file:
+        - /app/script/model_test/nvidia/h20_inference_benchmark_llama2-70b/run_inference_benchmark_llama2-70b.sh
+        - /app/script/model_test/nvidia/h20_inference_benchmark_llama2-70b/get_inference_benchmark_llama2-70b_progress.sh
+        - /app/script/model_test/nvidia/h20_inference_benchmark_llama2-70b/get_inference_benchmark_llama2-70b_result.py
+      params:
+        entry_script: run_inference_benchmark_llama2-70b.sh
+        image_id: nvcr.io/nvidia/tritonserver:24.06-trtllm-python-py3
+        max_batch_size: 64
+        max_input_len: 512
+        max_output_len: 512
+        tp_size: 8
+        query_interval: 1
+      task_timeout: 120
+      task_estimated_time: 60
+      result: py_cmd=$(command -v python || command -v python3); $py_cmd {remote_data_path}/get_inference_benchmark_llama2-70b_result.py --log_file {remote_data_path}/{task_name}_{node_id}_inference_benchmark_llama2-70b_performance.log
+      progress: bash {remote_data_path}/get_inference_benchmark_llama2-70b_progress.sh {remote_data_path}/{task_name}_{node_id}_inference_benchmark_llama2-70b_performance.log {docker_name} {entry_script}
+      download_file:
+        - "{remote_data_path}/{task_name}_{node_id}_inference_benchmark_llama2-70b_performance.log"

@@ -1,0 +1,1497 @@
+{
+  "cpu_check": {
+    "key": "cpu_check",
+    "name_en": "CPU Check",
+    "name_zh": "CPU检查",
+    "isSelected": true,
+    "description_en": "check the CPU model and quantity",
+    "description_zh": "检查CPU型号和数量",
+    "param": [
+      {
+        "key": "cpu_model",
+        "name_en": "CPU Model",
+        "name_zh": "CPU型号",
+        "default_value": "Intel(R) Xeon(R) Platinum 8468",
+        "value_type": "string",
+        "required": true
+      },
+      {
+        "key": "cpu_count",
+        "name_en": "CPU Count",
+        "name_zh": "CPU数量",
+        "default_value": 192,
+        "value_type": "number",
+        "min": 1,
+        "required": true
+      }
+    ]
+  },
+  "memory_check": {
+    "key": "memory_check",
+    "name_en": "Memory Check",
+    "name_zh": "内存检查",
+    "isSelected": true,
+    "description_en": "check the memory model and size",
+    "description_zh": "检查内存型号和大小",
+    "param": [
+      {
+        "key": "memory_model",
+        "name_en": "Memory Model",
+        "name_zh": "内存型号",
+        "default_value": "Samsung",
+        "value_type": "string",
+        "required": true
+      },
+      {
+        "key": "memory_size",
+        "name_en": "Memory Size",
+        "name_zh": "内存大小",
+        "default_value": 2048,
+        "value_type": "number",
+        "min": 1,
+        "unit_en": "GB",
+        "unit_zh": "GB",
+        "required": true
+      }
+    ]
+  },
+  "hard_disk_check": {
+    "key": "hard_disk_check",
+    "name_en": "Hard Disk Check",
+    "name_zh": "硬盘检查",
+    "isSelected": true,
+    "description_en": "check the hard disk model and size",
+    "description_zh": "检查硬盘型号和大小",
+    "param": [
+      {
+        "key": "hard_disk_model",
+        "name_en": "Hard Disk model",
+        "name_zh": "硬盘型号",
+        "default_value": "LOGICAL_VOLUME,INTEL SSDPF2KE032T1",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple hard drive models used ',' divided",
+        "notice_zh": "多个硬盘型号使用','分割"
+      },
+      {
+        "key": "hard_disk_size",
+        "name_en": "Hard Disk Size",
+        "name_zh": "硬盘大小",
+        "default_value": 12325.5,
+        "value_type": "number",
+        "min": 0.01,
+        "precision": 2,
+        "unit_en": "GB",
+        "unit_zh": "GB",
+        "required": true
+      }
+    ]
+  },
+  "raid_card_check": {
+    "key": "raid_card_check",
+    "name_en": "Raid Card Check",
+    "name_zh": "Raid卡检查",
+    "isSelected": false,
+    "description_en": "check the raid card model and count",
+    "description_zh": "检查Raid卡型号和数量",
+    "param": [
+      {
+        "key": "raid_card_model",
+        "name_en": "Raid Card Model",
+        "name_zh": "Raid卡型号",
+        "default_value": "RS243-18i",
+        "value_type": "string",
+        "required": true
+      },
+      {
+        "key": "raid_card_count",
+        "name_en": "Raid Card Count",
+        "name_zh": "Raid卡数量",
+        "default_value": 1,
+        "value_type": "number",
+        "min": 1,
+        "required": true
+      }
+    ]
+  },
+  "gpu_info_check": {
+    "key": "gpu_info_check",
+    "name_en": "GPU Info Check",
+    "name_zh": "GPU信息检查",
+    "isSelected": true,
+    "description_en": "check the GPU model and count",
+    "description_zh": "检查GPU型号和数量",
+    "param": [
+      {
+        "key": "gpu_model",
+        "name_en": "GPU Model",
+        "name_zh": "GPU型号",
+        "default_value": "",
+        "value_type": "string",
+        "required": true
+      },
+      {
+        "key": "gpu_count",
+        "name_en": "GPU Count",
+        "name_zh": "GPU数量",
+        "default_value": 8,
+        "value_type": "number",
+        "min": 1,
+        "required": true
+      }
+    ]
+  },
+  "gpu_driver_check": {
+    "key": "gpu_driver_check",
+    "name_en": "GPU Driver Check",
+    "name_zh": "GPU驱动检查",
+    "isSelected": true,
+    "description_en": "check the GPU driver",
+    "description_zh": "检查GPU驱动",
+    "param": [
+      {
+        "key": "gpu_driver",
+        "name_en": "GPU Driver",
+        "name_zh": "GPU驱动",
+        "default_value": "",
+        "value_type": "string",
+        "required": true
+      }
+    ]
+  },
+  "gpu_state_check": {
+    "key": "gpu_state_check",
+    "name_en": "GPU State Check",
+    "name_zh": "GPU状态检查",
+    "isSelected": true,
+    "description_en": "check the GPU state",
+    "description_zh": "检查GPU状态"
+  },
+  "gpu_bf16_check": {
+    "key": "gpu_bf16_check",
+    "name_en": "BF16 Capability Check",
+    "name_zh": "BF16算力检查",
+    "isSelected": true,
+    "description_en": "check the GPU bf16 capability",
+    "description_zh": "检查GPU bf16算力",
+    "param": [
+      {
+        "key": "capability_threshold",
+        "name_en": "capability threshold",
+        "name_zh": "算力阈值",
+        "value_type": "number",
+        "min": 0.001,
+        "precision": 3,
+        "required": true,
+        "notice_en": "BF16 capability threshold(tflops)",
+        "notice_zh": "BF16算力阈值(tflops)"
+      }
+    ]
+  },
+  "gpu_fp32_check": {
+    "key": "gpu_fp32_check",
+    "name_en": "FP32 Capability Check",
+    "name_zh": "FP32算力检查",
+    "isSelected": true,
+    "description_en": "check the GPU fp32 capability",
+    "description_zh": "检查GPU fp32算力",
+    "param": [
+      {
+        "key": "capability_threshold",
+        "name_en": "capability threshold",
+        "name_zh": "算力阈值",
+        "value_type": "number",
+        "min": 0.001,
+        "precision": 3,
+        "required": true,
+        "notice_en": "FP32 capability threshold(tflops)",
+        "notice_zh": "FP32算力阈值(tflops)"
+      }
+    ]
+  },
+  "gpu_int8_check": {
+    "key": "gpu_int8_check",
+    "name_en": "Int8 Capability Check",
+    "name_zh": "Int8算力检查",
+    "isSelected": true,
+    "description_en": "check the GPU int8 capability",
+    "description_zh": "检查GPU int8算力",
+    "param": [
+      {
+        "key": "capability_threshold",
+        "name_en": "capability threshold",
+        "name_zh": "算力阈值",
+        "value_type": "number",
+        "min": 0.001,
+        "precision": 3,
+        "required": true,
+        "notice_en": "Int8 capability threshold(tops)",
+        "notice_zh": "Int8算力阈值(tops)"
+      }
+    ]
+  },
+  "gpu_tf32_check": {
+    "key": "gpu_tf32_check",
+    "name_en": "TF32 Capability Check",
+    "name_zh": "TF32算力检查",
+    "isSelected": true,
+    "description_en": "check the GPU tf32 capability",
+    "description_zh": "检查GPU tf32算力",
+    "param": [
+      {
+        "key": "capability_threshold",
+        "name_en": "capability threshold",
+        "name_zh": "算力阈值",
+        "value_type": "number",
+        "min": 0.001,
+        "precision": 3,
+        "required": true
+      }
+    ]
+  },
+  "gpu_d2d_check": {
+    "key": "gpu_d2d_check",
+    "name_en": "D2D Bandwidth Check",
+    "name_zh": "D2D带宽检查",
+    "isSelected": true,
+    "description_en": "check d2d bandwidth",
+    "description_zh": "检查GPU d2d带宽",
+    "param": [
+      {
+        "key": "bandwidth_threshold",
+        "name_en": "bandwidth threshold",
+        "name_zh": "带宽阈值",
+        "value_type": "number",
+        "min": 0.001,
+        "precision": 3,
+        "required": true,
+        "notice_en": "D2D bandwidth threshold(GBps)",
+        "notice_zh": "D2D带宽阈值(GBps)"
+      }
+    ]
+  },
+  "gpu_d2h_check": {
+    "key": "gpu_d2h_check",
+    "name_en": "D2H Bandwidth Check",
+    "name_zh": "D2H带宽检查",
+    "isSelected": true,
+    "description_en": "check d2h bandwidth",
+    "description_zh": "检查GPU d2h带宽",
+    "param": [
+      {
+        "key": "bandwidth_threshold",
+        "name_en": "bandwidth threshold",
+        "name_zh": "带宽阈值",
+        "value_type": "number",
+        "min": 0.001,
+        "precision": 3,
+        "required": true,
+        "notice_en": "D2H bandwidth threshold(GBps)",
+        "notice_zh": "D2H带宽阈值(GBps)"
+      }
+    ]
+  },
+  "gpu_h2d_check": {
+    "key": "gpu_h2d_check",
+    "name_en": "H2D Bandwidth Check",
+    "name_zh": "H2D带宽检查",
+    "isSelected": true,
+    "description_en": "check h2d bandwidth",
+    "description_zh": "检查GPU h2d带宽",
+    "param": [
+      {
+        "key": "bandwidth_threshold",
+        "name_en": "bandwidth threshold",
+        "name_zh": "带宽阈值",
+        "value_type": "number",
+        "min": 0.001,
+        "precision": 3,
+        "required": true,
+        "notice_en": "H2D bandwidth threshold(GBps)",
+        "notice_zh": "H2D带宽阈值(GBps)"
+      }
+    ]
+  },
+  "gpu_membw_check": {
+    "key": "gpu_membw_check",
+    "name_en": "GPU MemoryBandwidth Check",
+    "name_zh": "GPU显存带宽检查",
+    "isSelected": true,
+    "description_en": "check GPU memorybandwidth",
+    "description_zh": "检查GPU显存带宽",
+    "param": [
+      {
+        "key": "bandwidth_threshold",
+        "name_en": "bandwidth threshold",
+        "name_zh": "带宽阈值",
+        "value_type": "number",
+        "min": 0.001,
+        "precision": 3,
+        "required": true
+      }
+    ]
+  },
+  "gpu_topology_consistency_check": {
+    "key": "gpu_topology_consistency_check",
+    "name_en": "GPU Topology Consistency Check",
+    "name_zh": "GPU拓扑一致性检查",
+    "isSelected": true,
+    "description_en": "check the GPU topology consistency",
+    "description_zh": "检查GPU的拓扑一致性"
+  },
+  "roce_priority_trust_check": {
+    "key": "roce_priority_trust_check",
+    "name_en": "RoCE Priority Trust Check",
+    "name_zh": "RoCE优先级信任检查",
+    "isSelected": true,
+    "description_en": "check the RoCE priority trust state",
+    "description_zh": "检查RoCE的优先级信任状态",
+    "param": [
+      {
+        "key": "state",
+        "name_en": "state",
+        "name_zh": "状态",
+        "default_value": "dscp",
+        "value_type": "string",
+        "required": true
+      }
+    ]
+  },
+  "roce_enable_queues_check": {
+    "key": "roce_enable_queues_check",
+    "name_en": "RoCE Enable Queues Check",
+    "name_zh": "RoCE启用队列检查",
+    "isSelected": true,
+    "description_en": "check the RoCE enable queues",
+    "description_zh": "检查RoCE的启用队列",
+    "param": [
+      {
+        "key": "state",
+        "name_en": "state",
+        "name_zh": "状态",
+        "default_value": "3,4",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple queues used ',' divided",
+        "notice_zh": "多个队列使用','分割"
+      }
+    ]
+  },
+  "roce_tcp_ecn_check": {
+    "key": "roce_tcp_ecn_check",
+    "name_en": "RoCE TCP ECN Check",
+    "name_zh": "RoCE TCP ECN检查",
+    "isSelected": true,
+    "description_en": "check the RoCE TCP ECN",
+    "description_zh": "检查RoCE的TCP ECN",
+    "param": [
+      {
+        "key": "tcp_ecn",
+        "name_en": "TCP ECN",
+        "name_zh": "TCP ECN",
+        "default_value": 2,
+        "value_type": "number",
+        "min": 0,
+        "required": true
+      }
+    ]
+  },
+  "roce_traffic_class_check": {
+    "key": "roce_traffic_class_check",
+    "name_en": "RoCE Traffic Class Check",
+    "name_zh": "RoCE Traffic Class检查",
+    "isSelected": true,
+    "description_en": "check the RoCE Traffic Class",
+    "description_zh": "检查RoCE的Traffic Class",
+    "param": [
+      {
+        "key": "traffic_class",
+        "name_en": "Traffic Class",
+        "name_zh": "Traffic Class",
+        "default_value": 126,
+        "value_type": "number",
+        "min": 0,
+        "required": true
+      }
+    ]
+  },
+  "nic_state_check": {
+    "key": "nic_state_check",
+    "name_en": "NIC State Check",
+    "name_zh": "网口状态检查",
+    "isSelected": true,
+    "description_en": "check the NIC state and info",
+    "description_zh": "检查网口状态以及相关信息",
+    "param": [
+      {
+        "key": "param_nic",
+        "name_en": "Parameter Nic",
+        "name_zh": "参数面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "param_nic_speed",
+        "name_en": "Parameter Nic Speed",
+        "name_zh": "参数面网卡速率",
+        "default_value": 200000,
+        "value_type": "number",
+        "min": 0,
+        "unit_en": "Mb/s",
+        "unit_zh": "Mb/s",
+        "required": true
+      },
+      {
+        "key": "param_nic_mtu",
+        "name_en": "Parameter Nic Mtu",
+        "name_zh": "参数面网卡mtu",
+        "default_value": 8192,
+        "value_type": "number",
+        "min": 0,
+        "required": true
+      },
+      {
+        "key": "stor_nic",
+        "name_en": "Storage Nic",
+        "name_zh": "存储面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "stor_nic_speed",
+        "name_en": "Storage Nic Speed",
+        "name_zh": "存储面网卡速率",
+        "default_value": 100000,
+        "value_type": "number",
+        "min": 0,
+        "unit_en": "Mb/s",
+        "unit_zh": "Mb/s",
+        "required": true,
+        "hidden": [
+          {
+            "compare_key": "nic_state_check.stor_nic",
+            "compare_values": [
+              "",
+              null
+            ],
+            "compare_include": true
+          }
+        ]
+      },
+      {
+        "key": "stor_nic_mtu",
+        "name_en": "Storage Nic Mtu",
+        "name_zh": "存储面网卡mtu",
+        "default_value": 1500,
+        "value_type": "number",
+        "min": 0,
+        "required": true,
+        "hidden": [
+          {
+            "compare_key": "nic_state_check.stor_nic",
+            "compare_values": [
+              "",
+              null
+            ],
+            "compare_include": true
+          }
+        ]
+      }
+    ]
+  },
+  "nic_driver_check": {
+    "key": "nic_driver_check",
+    "name_en": "NIC Driver Check",
+    "name_zh": "网口驱动检查",
+    "isSelected": true,
+    "description_en": "check the NIC driver",
+    "description_zh": "检查网口驱动",
+    "param": [
+      {
+        "key": "param_nic",
+        "name_en": "Parameter Nic",
+        "name_zh": "参数面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "param_nic_driver",
+        "name_en": "Parameter Nic Driver",
+        "name_zh": "参数面网卡驱动",
+        "default_value": "",
+        "value_type": "string",
+        "required": true
+      },
+      {
+        "key": "stor_nic",
+        "name_en": "Storage Nic",
+        "name_zh": "存储面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "stor_nic_driver",
+        "name_en": "Storage Nic Driver",
+        "name_zh": "存储面网卡驱动",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "hidden": [
+          {
+            "compare_key": "nic_driver_check.stor_nic",
+            "compare_values": [
+              "",
+              null
+            ],
+            "compare_include": true
+          }
+        ]
+      }
+    ]
+  },
+  "optical_module_health_check": {
+    "key": "optical_module_health_check",
+    "name_en": "Optical Module Health Check",
+    "name_zh": "光模块健康度检查",
+    "isSelected": true,
+    "description_en": "check the optical module health(power, temp...etc)",
+    "description_zh": "检查光模块健康度(功率、温度等)",
+    "param": [
+      {
+        "key": "param_nic",
+        "name_en": "Parameter Nic",
+        "name_zh": "参数面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "stor_nic",
+        "name_en": "Storage Nic",
+        "name_zh": "存储面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      }
+    ]
+  },
+  "roce_network_config_check": {
+    "key": "roce_network_config_check",
+    "name_en": "Roce Network Config Check",
+    "name_zh": "RoCE网络配置检查",
+    "isSelected": true,
+    "description_en": "check the configure of RoCE newtork",
+    "description_zh": "检查RoCE相关配置",
+    "param": [
+      {
+        "key": "param_nic",
+        "name_en": "Parameter Nic",
+        "name_zh": "参数面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "gid_index",
+        "name_en": "GID Index",
+        "name_zh": "GID索引",
+        "default_value": 3,
+        "value_type": "number",
+        "min": 0,
+        "required": true
+      }
+    ]
+  },
+  "cpu_idle_state_check": {
+    "key": "cpu_idle_state_check",
+    "name_en": "CPU Idle State Check",
+    "name_zh": "CPU空闲状态检查",
+    "isSelected": false,
+    "description_en": "check the CPU idle state is poll mode",
+    "description_zh": "检查CPU空闲状态是否是poll模式"
+  },
+  "pcie_acs_check": {
+    "key": "pcie_acs_check",
+    "name_en": "PCIe ACS Check",
+    "name_zh": "PCIe ACS检查",
+    "isSelected": true,
+    "description_en": "check the ACSCTL state of PCIe is close",
+    "description_zh": "检查PCIe的Acsctl是否为关闭状态"
+  },
+  "nic_pcie_link_state_check": {
+    "key": "nic_pcie_link_state_check",
+    "name_en": "Nic PCIe Link State Check",
+    "name_zh": "网卡PCIe连接状态检查",
+    "isSelected": true,
+    "description_en": "check the Nic PCIe Link State",
+    "description_zh": "检查网卡PCIe连接状态",
+    "param": [
+      {
+        "key": "param_nic",
+        "name_en": "Parameter Nic",
+        "name_zh": "参数面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "stor_nic",
+        "name_en": "Storage Nic",
+        "name_zh": "存储面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      }
+    ]
+  },
+  "gpu_pcie_link_state_check": {
+    "key": "gpu_pcie_link_state_check",
+    "name_en": "GPU PCIe Link State Check",
+    "name_zh": "GPU PCIe卡连接状态检查",
+    "isSelected": true,
+    "description_en": "check the GPU PCIe Link State",
+    "description_zh": "检查GPU PCIe连接状态"
+  },
+  "rdma_bw_lat_perf_check": {
+    "key": "rdma_bw_lat_perf_check",
+    "name_en": "RDMA Network Bandwidth And Latency Performance Check",
+    "name_zh": "RDMA网络带宽时延性能检查",
+    "isSelected": false,
+    "description_en": "check RDMA network bandwidth and latency performance",
+    "description_zh": "检查RDMA网络带宽时延性能",
+    "param": [
+      {
+        "key": "mode",
+        "name_en": "Mode",
+        "name_zh": "模式",
+        "default_value": "n2n",
+        "value_type": "selector",
+        "selector_option": [
+          "n2n",
+          "fullmesh",
+          "all_n2n",
+          "all_fullmesh"
+        ],
+        "required": true
+      },
+      {
+        "key": "opr_cmd",
+        "name_en": "Operation Command",
+        "name_zh": "操作命令",
+        "default_value": "ib_write_bw",
+        "value_type": "selector",
+        "selector_option": [
+          "ib_write_bw",
+          "ib_send_bw",
+          "ib_read_bw",
+          "ib_write_lat",
+          "ib_send_lat",
+          "ib_read_lat"
+        ],
+        "required": true
+      },
+      {
+        "key": "param_nic",
+        "name_en": "Parameter Nic",
+        "name_zh": "参数面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "server_nodes",
+        "name_en": "Server Management IP",
+        "name_zh": "服务端节点管理面IP",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple IP used ',' divided",
+        "notice_zh": "多个IP使用','分割",
+        "hidden": [
+          {
+            "compare_key": "rdma_bw_lat_perf_check.mode",
+            "compare_values": [
+              "n2n",
+              "fullmesh"
+            ],
+            "compare_include": false
+          }
+        ]
+      },
+      {
+        "key": "server_nics",
+        "name_en": "Server Nic",
+        "name_zh": "服务端网口名称",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple nic used ',' divided",
+        "notice_zh": "多个网口使用','分割",
+        "hidden": [
+          {
+            "compare_key": "rdma_bw_lat_perf_check.mode",
+            "compare_values": [
+              "fullmesh"
+            ],
+            "compare_include": false
+          }
+        ]
+      },
+      {
+        "key": "qps",
+        "name_en": "Number Of QP's",
+        "name_zh": "QP数",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Multiple qp number used ',' divided",
+        "notice_zh": "多个qp数使用','分割"
+      },
+      {
+        "key": "sizes",
+        "name_en": "Size Of Message",
+        "name_zh": "字节数",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Multiple size used ',' divided",
+        "notice_zh": "多个字节数使用','分割"
+      },
+      {
+        "key": "duration",
+        "name_en": "Duration",
+        "name_zh": "时长",
+        "default_value": 60,
+        "value_type": "number",
+        "min": 1,
+        "unit_en": "sec",
+        "unit_zh": "秒",
+        "required": false
+      },
+      {
+        "key": "gid_index",
+        "name_en": "GID Index",
+        "name_zh": "GID索引",
+        "default_value": 3,
+        "value_type": "number",
+        "min": 0,
+        "required": false
+      },
+      {
+        "key": "rdma_cm",
+        "name_en": "Connect QPs with rdma_cm",
+        "name_zh": "是否CM建链",
+        "value_type": "selector",
+        "selector_option": [
+          {
+            "label_en": "true",
+            "label_zh": "是",
+            "value": "true"
+          },
+          {
+            "label_en": "false",
+            "label_zh": "否",
+            "value": "false"
+          }
+        ],
+        "required": false
+      },
+      {
+        "key": "post_list",
+        "name_en": "Post List Size",
+        "name_zh": "发送WQE列表大小",
+        "value_type": "number",
+        "min": 1,
+        "required": false
+      },
+      {
+        "key": "tx_depth",
+        "name_en": "TX Queue Size",
+        "name_zh": "TX队列大小",
+        "value_type": "number",
+        "min": 1,
+        "required": false
+      },
+      {
+        "key": "rx_depth",
+        "name_en": "RX Queue Size",
+        "name_zh": "RX队列大小",
+        "value_type": "number",
+        "min": 1,
+        "required": false
+      },
+      {
+        "key": "timeout",
+        "name_en": "Time Out",
+        "name_zh": "超时时长",
+        "value_type": "number",
+        "min": 1,
+        "unit_en": "sec",
+        "unit_zh": "秒",
+        "required": false
+      },
+      {
+        "key": "iterations",
+        "name_en": "Iterations",
+        "name_zh": "迭代",
+        "default_value": 1000,
+        "value_type": "number",
+        "min": 1,
+        "required": false
+      }
+    ]
+  },
+  "collective_communication_test": {
+    "key": "collective_communication_test",
+    "name_en": "Collective Communication Test",
+    "name_zh": "集合通信压测",
+    "isSelected": true,
+    "description_en": "check GPU collective communication performance",
+    "description_zh": "检查GPU集合通信性能",
+    "param": [
+      {
+        "key": "node_count",
+        "name_en": "Communication Node Count",
+        "name_zh": "通信节点数量",
+        "value_type": "selector",
+        "default_value": "1",
+        "selector_option": [
+          "1",
+          "2",
+          "4",
+          "8",
+          "16",
+          "32",
+          "64",
+          "128"
+        ],
+        "required": true
+      },
+      {
+        "key": "bw_standard",
+        "name_en": "Bandwidth Standard",
+        "name_zh": "带宽标准值",
+        "value_type": "number",
+        "min": 1,
+        "unit_en": "GB/s",
+        "unit_zh": "GB/s",
+        "required": true
+      },
+      {
+        "key": "gid_index",
+        "name_en": "GID Index",
+        "name_zh": "GID索引",
+        "default_value": 3,
+        "value_type": "number",
+        "min": 0,
+        "required": true
+      },
+      {
+        "key": "gpu_count",
+        "name_en": "GPU Count",
+        "name_zh": "GPU数量",
+        "value_type": "number",
+        "default_value": 8,
+        "min": 1,
+        "max": 8,
+        "required": true
+      },
+      {
+        "key": "tcp_nic",
+        "name_en": "TCP NIC",
+        "name_zh": "TCP网卡",
+        "value_type": "string",
+        "default_value": "bond0",
+        "required": false
+      },
+      {
+        "key": "param_nic",
+        "name_en": "Parameter Nic",
+        "name_zh": "参数面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "algorithm",
+        "name_en": "Test Algorithm",
+        "name_zh": "测试算法",
+        "default_value": "all_reduce",
+        "value_type": "selector",
+        "selector_option": [
+          "all_reduce",
+          "all_gather",
+          "all_to_all",
+          "reduce_scatter",
+          "reduce",
+          "broadcast",
+          "sendrecv"
+        ],
+        "required": true
+      },
+      {
+        "key": "begin_size",
+        "name_en": "Begin Data Size",
+        "name_zh": "起始数据大小",
+        "value_type": "string",
+        "default_value": "1K",
+        "required": true
+      },
+      {
+        "key": "end_size",
+        "name_en": "End Data Size",
+        "name_zh": "结束数据大小",
+        "value_type": "string",
+        "default_value": "1G",
+        "required": true
+      },
+      {
+        "key": "step_factor",
+        "name_en": "Increment Factor",
+        "name_zh": "步长因子",
+        "value_type": "number",
+        "precision": 1,
+        "min": 0.1,
+        "default_value": 2,
+        "required": true
+      },
+      {
+        "key": "iterations",
+        "name_en": "Iteration",
+        "name_zh": "迭代次数",
+        "value_type": "number",
+        "min": 1,
+        "default_value": 10,
+        "required": true
+      },
+      {
+        "key": "warmup_iterations",
+        "name_en": "Warmup Iteration",
+        "name_zh": "预热迭代次数",
+        "value_type": "number",
+        "min": 0,
+        "default_value": 5,
+        "required": true
+      },
+      {
+        "key": "ssh_port",
+        "name_en": "SSH Port",
+        "name_zh": "SSH端口",
+        "value_type": "number",
+        "required": false,
+        "default_value": 2222
+      },
+      {
+        "key": "env_param",
+        "name_en": "Environment Variables",
+        "name_zh": "环境变量",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Environment variables to be configured, separated by ',', for example, param1=value1,param2=value2.",
+        "notice_zh": "需要配置的环境变量，使用','分割，例如 param1=value1,param2=value2"
+      },
+      {
+        "key": "additional_param",
+        "name_en": "Collective communication additional parameter",
+        "name_zh": "集合通信额外参数",
+        "value_type": "string",
+        "required": false
+      }
+    ]
+  },
+  "ping_network_connection_check": {
+    "key": "ping_network_connection_check",
+    "name_en": "Ping Network Connection Check",
+    "name_zh": "Ping网络连通性检测",
+    "isSelected": true,
+    "description_en": "check the connection of network with ping",
+    "description_zh": "使用ping检测网络连通性",
+    "param": [
+      {
+        "key": "target_addrs",
+        "name_en": "Target Address",
+        "name_zh": "目标地址",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple address used ',' divided.",
+        "notice_zh": "多个地址使用','分割。"
+      },
+      {
+        "key": "packet_size",
+        "name_en": "Packet Size",
+        "name_zh": "包大小",
+        "default_value": 56,
+        "value_type": "number",
+        "min": 0,
+        "max": 65507,
+        "unit_en": "Bytes",
+        "unit_zh": "Bytes",
+        "required": true
+      },
+      {
+        "key": "packet_count",
+        "name_en": "Packet Count",
+        "name_zh": "包数",
+        "default_value": 3,
+        "value_type": "number",
+        "min": 1,
+        "max": 100,
+        "required": true
+      },
+      {
+        "key": "egress_interface",
+        "name_en": "Egress Interface",
+        "name_zh": "发包网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Multiple Interface used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      }
+    ]
+  },
+  "roce_network_connection_check": {
+    "key": "roce_network_connection_check",
+    "name_en": "Parameter Network Connection Check",
+    "name_zh": "参数面网络通断检查",
+    "isSelected": false,
+    "description_en": "Check roce network Connection using ib_send_lat",
+    "description_zh": "使用ib_send_lat算法检查roce网络通断",
+    "param": [
+      {
+        "key": "param_nic",
+        "name_en": "Parameter Nic",
+        "name_zh": "参数面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "gid_index",
+        "name_en": "GID Index",
+        "name_zh": "GID索引",
+        "default_value": 3,
+        "value_type": "number",
+        "min": 0,
+        "required": true
+      },
+      {
+        "key": "check_only_same_name_network_devices",
+        "name_en": "Check Only Same-Name Network Devices",
+        "name_zh": "是否只检查同名网卡",
+        "default_value": "true",
+        "value_type": "selector",
+        "selector_option": [
+          {
+            "label_en": "true",
+            "label_zh": "是",
+            "value": "true"
+          },
+          {
+            "label_en": "false",
+            "label_zh": "否",
+            "value": "false"
+          }
+        ],
+        "required": true,
+        "notice_en": "Whether to restrict checks to network devices with the same name",
+        "notice_zh": "是否只对名称相同的网卡执行检查"
+      }
+    ]
+  },
+  "storage_bandwidth_check": {
+    "key": "storage_bandwidth_check",
+    "name_en": "Storage Bandwidth Check",
+    "name_zh": "存储带宽检查",
+    "isSelected": true,
+    "description_zh": "检查共享存储带宽",
+    "description_en": "check the bandwidth of shared storage",
+    "param": [
+      {
+        "key": "shared_storage_path",
+        "name_en": "Shared Storage Path",
+        "name_zh": "共享存储目录",
+        "default_value": "/mnt/nfs",
+        "value_type": "string",
+        "required": true
+      },
+      {
+        "key": "block_size",
+        "name_en": "Block Size",
+        "name_zh": "块大小",
+        "default_value": "1M",
+        "value_type": "string",
+        "notice_en": "For example: 1K, 1M, 1G, 1T etc.",
+        "notice_zh": "例如: 1K, 1M, 1G, 1T等",
+        "required": true
+      },
+      {
+        "key": "block_count",
+        "name_en": "Block Count",
+        "name_zh": "块数量",
+        "default_value": 10240,
+        "value_type": "number",
+        "min": 1,
+        "max": 100000,
+        "required": true
+      },
+      {
+        "key": "bandwidth",
+        "name_en": "Bandwidth",
+        "name_zh": "带宽",
+        "default_value": 100,
+        "value_type": "number",
+        "min": 1,
+        "unit_en": "MB/s",
+        "unit_zh": "MB/s",
+        "notice_en": "expected value, used for result comparison.",
+        "notice_zh": "期望值，用于结果对比",
+        "required": true
+      }
+    ]
+  },
+  "parameter_nic_stress": {
+    "key": "parameter_nic_stress",
+    "name_en": "Parameter Nic Stress",
+    "name_zh": "参数面网卡压测",
+    "isSelected": false,
+    "description_zh": "在长时间打流的情况下检测网卡的光模块健康度",
+    "description_en": "Check the optical module health of nic during prolonged traffic load",
+    "param": [
+      {
+        "key": "param_nic",
+        "name_en": "Parameter Nic",
+        "name_zh": "参数面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "gid_index",
+        "name_en": "GID Index",
+        "name_zh": "GID索引",
+        "default_value": 3,
+        "value_type": "number",
+        "min": 0,
+        "required": true
+      },
+      {
+        "key": "packet_size",
+        "name_en": "Packet Size",
+        "name_zh": "包大小",
+        "default_value": 1073741824,
+        "value_type": "number",
+        "min": 1,
+        "max": 1073741824,
+        "unit_en": "Bytes",
+        "unit_zh": "Bytes",
+        "required": true
+      },
+      {
+        "key": "packet_count",
+        "name_en": "Packet Count",
+        "name_zh": "包数",
+        "default_value": 10,
+        "value_type": "number",
+        "min": 1,
+        "max": 20,
+        "required": true
+      }
+    ]
+  },
+  "param_bandwidth_check": {
+    "key": "param_bandwidth_check",
+    "name_en": "Parameter Network Bandwidth Check",
+    "name_zh": "参数面网络带宽检查",
+    "isSelected": false,
+    "description_en": "Check network bandwidth performance using specified algorithm",
+    "description_zh": "使用指定算法检查网络带宽性能",
+    "param": [
+      {
+        "key": "param_nic",
+        "name_en": "Parameter Nic",
+        "name_zh": "参数面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "gid_index",
+        "name_en": "GID Index",
+        "name_zh": "GID索引",
+        "default_value": 3,
+        "value_type": "number",
+        "min": 0,
+        "required": true
+      },
+      {
+        "key": "target_bandwidth",
+        "name_en": "Target Bandwidth",
+        "name_zh": "目标带宽",
+        "min": 1,
+        "value_type": "number",
+        "unit_en": "Gb/sec",
+        "unit_zh": "Gb/sec",
+        "required": true,
+        "notice_en": "Target bandwidth value to achieve",
+        "notice_zh": "要达到的目标带宽值"
+      },
+      {
+        "key": "if_param_ip_as_manage_channel",
+        "name_en": "Use Param IP as Manage Channel",
+        "name_zh": "使用参数面IP作为检查通道",
+        "default_value": "false",
+        "value_type": "selector",
+        "selector_option": [
+          {
+            "label_en": "true",
+            "label_zh": "是",
+            "value": "true"
+          },
+          {
+            "label_en": "false",
+            "label_zh": "否",
+            "value": "false"
+          }
+        ],
+        "required": true,
+        "notice_en": "Whether to use parameter IP as management channel",
+        "notice_zh": "是否使用参数面IP作为检查通道"
+      },
+      {
+        "key": "message_size",
+        "name_en": "Message Size",
+        "name_zh": "消息大小",
+        "default_value": 65536,
+        "value_type": "number",
+        "min": 1,
+        "max": 1073741824,
+        "unit_en": "bytes",
+        "unit_zh": "字节",
+        "required": false,
+        "notice_en": "Message size for bandwidth test",
+        "notice_zh": "带宽测试的消息大小"
+      },
+      {
+        "key": "queue_size",
+        "name_en": "Queue Size",
+        "name_zh": "队列大小",
+        "default_value": 1,
+        "value_type": "number",
+        "min": 1,
+        "max": 200,
+        "required": false,
+        "notice_en": "Queue size for bandwidth test",
+        "notice_zh": "带宽测试的队列大小"
+      },
+      {
+        "key": "ib_test_bw_args",
+        "name_en": "IB TEST BW Arguments",
+        "name_zh": "IB测试带宽参数",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Additional arguments for bandwidth perftest command",
+        "notice_zh": "带宽测试命令的附加参数"
+      },
+      {
+        "key": "algorithm",
+        "name_en": "Algorithm",
+        "name_zh": "算法",
+        "value_type": "selector",
+        "default_value": "ib_write_bw",
+        "selector_option": [
+          "ib_write_bw",
+          "ib_send_bw",
+          "ib_read_bw"
+        ],
+        "notice_en": "Algorithm to use for bandwidth testing",
+        "notice_zh": "用于带宽测试的算法"
+      }
+    ]
+  },
+  "storage_nic_stress": {
+    "key": "storage_nic_stress",
+    "name_en": "Storage Nic Stress",
+    "name_zh": "存储面网卡压测",
+    "isSelected": false,
+    "description_zh": "在长时间打流的情况下检测网卡的光模块健康度",
+    "description_en": "Check the optical module health of nic during prolonged traffic load",
+    "param": [
+      {
+        "key": "stor_nic",
+        "name_en": "Storage Nic",
+        "name_zh": "存储面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": true,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "gid_index",
+        "name_en": "GID Index",
+        "name_zh": "GID索引",
+        "default_value": 3,
+        "value_type": "number",
+        "min": 0,
+        "required": true
+      },
+      {
+        "key": "packet_size",
+        "name_en": "Packet Size",
+        "name_zh": "包大小",
+        "default_value": 1073741824,
+        "value_type": "number",
+        "min": 1,
+        "max": 1073741824,
+        "unit_en": "Bytes",
+        "unit_zh": "Bytes",
+        "required": true
+      },
+      {
+        "key": "packet_count",
+        "name_en": "Packet Count",
+        "name_zh": "包数",
+        "default_value": 10,
+        "value_type": "number",
+        "min": 1,
+        "max": 20,
+        "required": true
+      }
+    ]
+  },
+  "roce_network_latency_check": {
+    "key": "roce_network_latency_check",
+    "name_en": "Parameter Network Latency Check",
+    "name_zh": "参数面网络时延检查",
+    "isSelected": false,
+    "description_en": "Check roce network latency using specified algorithm",
+    "description_zh": "使用指定算法检查roce网络时延",
+    "param": [
+      {
+        "key": "param_nic",
+        "name_en": "Parameter Nic",
+        "name_zh": "参数面网卡",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Multiple nic used ',' divided.",
+        "notice_zh": "多个网卡使用','分割。"
+      },
+      {
+        "key": "gid_index",
+        "name_en": "GID Index",
+        "name_zh": "GID索引",
+        "default_value": 3,
+        "value_type": "number",
+        "min": 0,
+        "required": true
+      },
+      {
+        "key": "latency_threshold",
+        "name_en": "Latency Threshold",
+        "name_zh": "最大时延",
+        "min": 1,
+        "value_type": "number",
+        "unit_en": "us",
+        "unit_zh": "us",
+        "required": true,
+        "notice_en": "The Maximum Acceptable Latency",
+        "notice_zh": "可接受的最大时延"
+      },
+      {
+        "key": "if_param_ip_as_manage_channel",
+        "name_en": "Use Param IP as Manage Channel",
+        "name_zh": "使用参数面IP作为检查通道",
+        "default_value": "false",
+        "value_type": "selector",
+        "selector_option": [
+          {
+            "label_en": "true",
+            "label_zh": "是",
+            "value": "true"
+          },
+          {
+            "label_en": "false",
+            "label_zh": "否",
+            "value": "false"
+          }
+        ],
+        "required": true,
+        "notice_en": "Whether to use parameter IP as management channel",
+        "notice_zh": "是否使用参数面IP作为检查通道"
+      },
+      {
+        "key": "message_size",
+        "name_en": "Message Size",
+        "name_zh": "消息大小",
+        "default_value": 65536,
+        "value_type": "number",
+        "min": 1,
+        "max": 1073741824,
+        "unit_en": "bytes",
+        "unit_zh": "字节",
+        "required": false,
+        "notice_en": "Message size for bandwidth test",
+        "notice_zh": "带宽测试的消息大小"
+      },
+      {
+        "key": "ib_test_lat_args",
+        "name_en": "Latency Perftest Arguments",
+        "name_zh": "时延测试的附加参数",
+        "default_value": "",
+        "value_type": "string",
+        "required": false,
+        "notice_en": "Additional arguments for latency perftest command",
+        "notice_zh": "时延测试命令的附加参数"
+      },
+      {
+        "key": "algorithm",
+        "name_en": "Algorithm",
+        "name_zh": "算法",
+        "value_type": "selector",
+        "default_value": "ib_write_lat",
+        "selector_option": [
+          "ib_write_lat",
+          "ib_send_lat",
+          "ib_read_lat"
+        ],
+        "notice_en": "Algorithm to use for lantency testing",
+        "notice_zh": "用于时延测试的算法"
+      }
+    ]
+  }
+}

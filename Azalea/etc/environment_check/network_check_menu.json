@@ -1,0 +1,46 @@
+[
+    {
+        "key": "network_connection_check",
+        "name_en": "Network Connection Check",
+        "name_zh": "网络连通性检测",
+        "check_item": [
+            "ping_network_connection_check",
+            "roce_network_connection_check"
+        ]
+    },
+    {
+        "key": "network_bandwidth_check",
+        "name_en": "Network Bandwidth Check",
+        "name_zh": "网络带宽检测",
+        "check_item": [
+            "storage_bandwidth_check",
+            "param_bandwidth_check"
+        ]
+    },
+    {
+        "key": "network_latency_check",
+        "name_en": "Network Latency Check",
+        "name_zh": "网络时延检测",
+        "check_item": [
+            "roce_network_latency_check"
+        ]
+    },
+    {
+        "key": "collective_communication_test",
+        "name_en": "Collective Communication Test",
+        "name_zh": "集合通信压测",
+        "check_item": [
+            "collective_communication_test"
+        ]
+    },
+    {
+        "key": "nic_pressure_test",
+        "name_en": "Nic Pressure Test",
+        "name_zh": "网卡压测",
+        "check_item": [
+            "parameter_nic_stress",
+            "storage_nic_stress",
+            "rdma_bw_lat_perf_check"
+        ]
+    }
+]

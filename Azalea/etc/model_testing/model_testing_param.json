@@ -1,0 +1,63 @@
+{
+  "inference_llama2-70b": {
+    "NVIDIA": {
+      "H20": {
+        "params": [
+          {
+            "key": "max_batch_size",
+            "name_en": "max_batch_size",
+            "name_zh": "最大batch_size",
+            "default_value": "64",
+            "value_type": "number",
+            "required": true,
+            "min": 1,
+            "precision": 0
+          },
+          {
+            "key": "max_input_len",
+            "name_en": "max_input_len",
+            "name_zh": "最大输入长度",
+            "default_value": "512",
+            "value_type": "number",
+            "required": true,
+            "min": 1,
+            "precision": 0
+          },
+          {
+            "key": "max_output_len",
+            "name_en": "max_output_len",
+            "name_zh": "最大输出长度",
+            "default_value": "512",
+            "value_type": "number",
+            "required": true,
+            "min": 1,
+            "precision": 0
+          },
+          {
+            "key": "tp_size",
+            "name_en": "Tensor parallel number",
+            "name_zh": "张量并行数",
+            "default_value": "8",
+            "value_type": "number",
+            "required": true,
+            "min": 1,
+            "max": 8,
+            "precision": 0
+          }
+        ],
+        "expected_result": [
+          {
+            "key": "tokens_per_sec",
+            "name_en": "tokensPerSec",
+            "name_zh": "每秒token数",
+            "default_value": 2000,
+            "value_type": "number",
+            "min": 0,
+            "precision": 2,
+            "compare": "min"
+          }
+        ]
+      }
+    }
+  }
+}
